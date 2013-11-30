@@ -4163,6 +4163,7 @@ function onViewToolbarsPopupShowing(aEvent, aInsertPoint) {
   var firstMenuItem = aInsertPoint || popup.firstChild;
 
   let toolbarNodes = Array.slice(gNavToolbox.childNodes);
+   toolbarNodes = Array.concat(toolbarNodes, Array.slice(gNavToolbox.externalToolbars));
 
   for (let toolbar of toolbarNodes) {
     let toolbarName = toolbar.getAttribute("toolbarname");
